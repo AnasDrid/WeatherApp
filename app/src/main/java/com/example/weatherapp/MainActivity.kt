@@ -8,15 +8,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.location.Location
 import android.location.LocationManager
-import android.location.LocationRequest
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.example.weatherapp.Service.WeatherService
 import com.example.weatherapp.models.WeatherResponse
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -30,11 +29,16 @@ import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.text.DateFormat
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
-import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,11 +50,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
+        val current = LocalDateTime.now()
+
+        val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy ")
+        val formatted = current.format(formatter)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         mSharedPreferences = getSharedPreferences(Constants.PREFERENCE_NAME, Context.MODE_PRIVATE)
+        date.text=current.dayOfWeek.toString().lowercase().capitalize()+"  "+formatted.toString()
         setupUI()
         if (!isLocationEnabled()){
             Toast.makeText(this,"Your Location is turned off, Please turn it on",Toast.LENGTH_SHORT)
@@ -215,19 +224,19 @@ class MainActivity : AppCompatActivity() {
                 tv_sunrise_time.text = unixTime(weatherList.sys.sunrise.toLong())
                 tv_sunset_time.text = unixTime(weatherList.sys.sunset.toLong())
                 when (weatherList.weather[z].icon) {
-                    "01d" -> iv_main.setImageResource(R.drawable.sunny)
-                    "02d" -> iv_main.setImageResource(R.drawable.cloud)
-                    "03d" -> iv_main.setImageResource(R.drawable.cloud)
-                    "04d" -> iv_main.setImageResource(R.drawable.cloud)
-                    "04n" -> iv_main.setImageResource(R.drawable.cloud)
+                    "01d" -> iv_main.setImageResource(R.drawable._1d)
+                    "01n" -> iv_main.setImageResource(R.drawable.clear_night)
+                    "02d" -> iv_main.setImageResource(R.drawable._2d)
+                    "02n" -> iv_main.setImageResource(R.drawable._2n)
+                    "03d" -> iv_main.setImageResource(R.drawable._3)
+                    "03n" -> iv_main.setImageResource(R.drawable._3)
+                    "04d" -> iv_main.setImageResource(R.drawable._4d)
+                    "04n" -> iv_main.setImageResource(R.drawable._4n)
                     "10d" -> iv_main.setImageResource(R.drawable.rain)
-                    "11d" -> iv_main.setImageResource(R.drawable.storm)
+                    "10n" -> iv_main.setImageResource(R.drawable.rain)
+                    "11d" -> iv_main.setImageResource(R.drawable._1)
+                    "11n" -> iv_main.setImageResource(R.drawable._1)
                     "13d" -> iv_main.setImageResource(R.drawable.snowflake)
-                    "01n" -> iv_main.setImageResource(R.drawable.cloud)
-                    "02n" -> iv_main.setImageResource(R.drawable.cloud)
-                    "03n" -> iv_main.setImageResource(R.drawable.cloud)
-                    "10n" -> iv_main.setImageResource(R.drawable.cloud)
-                    "11n" -> iv_main.setImageResource(R.drawable.rain)
                     "13n" -> iv_main.setImageResource(R.drawable.snowflake)
                 }
             }

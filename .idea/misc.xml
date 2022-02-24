@@ -3,11 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/_0.xml" value="0.1935" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/close.xml" value="0.136" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/cloud.xml" value="0.136" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/evening.xml" value="0.136" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/humidity.xml" value="0.136" />
+        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_refresh_24dp.xml" value="0.136" />
+        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/location.xml" value="0.1" />
+        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/morning.xml" value="0.1" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/rain.xml" value="0.136" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/snowflake.xml" value="0.136" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/storm.xml" value="0.136" />
@@ -16,8 +21,9 @@
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/sunset.xml" value="0.136" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/temperature.xml" value="0.136" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/wind.xml" value="0.136" />
-        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.67" />
         <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/layout/dialog_custom_progress.xml" value="0.33" />
+        <entry key="..\:/Users/Anas/AndroidStudioProjects/WeatherApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1935" />
       </map>
     </option>
   </component>
